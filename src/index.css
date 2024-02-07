@@ -38,8 +38,15 @@ margin: 0;
 .content p{
     color: rgb(255, 255, 255);
     position: absolute;
-    padding-top: 270px;
+    padding-top: 300px;
     font-style:bold;
+}
+
+.content p img{
+  padding-top: 200px;
+  position: relative;
+  margin-left: 50px;
+ 
 }
 
 .contentP {
