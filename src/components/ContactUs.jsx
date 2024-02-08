@@ -6,13 +6,13 @@ const ContactUs = () => {
       <div className="contact-container">
         <form className="form-container flex" action="https://getform.io/f/87fd37e4-92f4-4ac1-a188-49e55bfc8344" method="POST">
           <div className="left-column flex-1 pr-8">
-            <h2 className="text-white text-3xl font-bold mb-4">Contact Us</h2>
-            <p className="text-white">
+            <h2 className="text-white text-3xl font-bold mb-6">Contact Us</h2>
+            <p className="text-white mb-4">
               Whether you have a question about our AI-powered technology, need assistance with our products, or want to explore potential partnerships, our team is here to provide prompt and personalized support.
             </p>
           </div>
 
-          <div className="right-column flex-2">
+          <div className="right-column flex-2 pr-8">
             <label htmlFor="organization" className="block text-gray-800 mb-2">Organization name</label>
             <input type="text" id="organization" name="organization" className="w-full p-2 mb-4 border border-gray-300 rounded" required />
 

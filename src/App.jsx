@@ -9,7 +9,7 @@ import ContactUs from './components/ContactUs'
 function App() {
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
       <ContactUs />
     </div>
   )
