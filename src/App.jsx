@@ -3,12 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Home from './components/Home'
-import './index.css';
+
 import ContactUs from './components/ContactUs'
 
 function App() {
   return (
-    <div>
+    <div >
       {/* <Home /> */}
       <ContactUs />
     </div>
