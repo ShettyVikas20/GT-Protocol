@@ -4,12 +4,14 @@ import viteLogo from "/vite.svg";
 // import "./App.css";
 import Home from "./components/Home";
 import ContactUs from "./components/ContactUs";
+import Avatar from "./components/Avatar";
 
 function App() {
   return (
     <>
-      <Home />
-      <ContactUs />
+      <Avatar />
+      {/* <Home />
+      <ContactUs /> */}
     </>
   );
 }
