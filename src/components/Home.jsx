@@ -2,6 +2,7 @@ import React from "react";
 import VideoBG from "../assets/videobg.mp4";
 import Marques from "./Marques";
 import Navbars from "./Navbars";
+import "./Avatar";
 
 function Home() {
   return (
@@ -64,8 +65,7 @@ function Home() {
                   </p>
                 </a>
                 <a
-                  href="https://docsend.com/view/4crdyu7mm875xd6n"
-                  target="_blank"
+                  href="/avatar"
                   className="border-2 border-t-0 border-l-0 rounded-lg border-gray-400 relative w-[137px]"
                 >
                   <div className="text-gray-400 absolute z-0">
@@ -90,7 +90,7 @@ function Home() {
                     </span>
                   </div>
                   <p className="text-gray-100 pt-2 z-10 text-center font-['Instrument Sans'] font-light text-base">
-                    Explore
+                    Cartoonizer
                   </p>
                 </a>
               </div>
