@@ -5,12 +5,14 @@ import './App.css'
 import Home from './components/Home'
 
 import ContactUs from './components/ContactUs'
+import Avatar from 'react-avatar-edit'
 
 function App() {
   return (
     <div >
       {/* <Home /> */}
-      <ContactUs />
+      <Avatar />
+      {/* <ContactUs /> */}
     </div>
   )
 }
