@@ -2,10 +2,12 @@ import React from "react";
 
 const ContactUs = () => {
   // Set the background color of the whole web page to violet-900
-  document.body.style.background = "linear-gradient(to bottom, #0D0C28, #5900b3)";
+  document.body.style.background = "linear-gradient(to bottom, #030b1f, #282469)";
+
+  // document.body.style.background = "linear-gradient(to bottom, #030b1f, ##1d1a4a)";
 
   return (
-    <div className="grid grid-cols-1 pt-20 md:grid-cols-2 gap-4 overlay bg-opacity-20 bg-black border-1 border-black m-4 rounded-tl rounded-br rounded-tr rounded-bl">
+    <div className="grid grid-cols-1 pt-20 md:grid-cols-2 overlay bg-opacity-20 bg-black border-1 border-black  rounded-tl rounded-br rounded-tr rounded-bl mx-24">
       <div className="-mt-3 font-arial pr-2 pl-2 py-4 text-left">
         <h2 className="text-white text-5xl mb-6 pl-8">Contact Us</h2>
         <p className="text-white mb-4 pr-4 pl-8">
@@ -26,7 +28,8 @@ const ContactUs = () => {
             type="text"
             id="organization"
             name="organization"
-            className="w-full text-sm p-2 outline-none mb-4 border text-white border-opacity-30 border-white hover:border-white rounded bg-violet-950"
+            className="w-full text-sm p-2 outline-none mb-4 border text-white border-opacity-30 border-white hover:border-white rounded "
+            style={{ backgroundColor: '#1b1454' }}
             placeholder="GT Protocol"
             required
           />
@@ -37,17 +40,18 @@ const ContactUs = () => {
           <select
             id="topic"
             name="topic"
-            className="w-full text-sm p-2 mb-4 border outline-none text-white border-white border-opacity-30 rounded hover:border-white bg-violet-950"
+            className="w-full text-sm p-2 mb-4 border outline-none text-white border-white border-opacity-30 rounded hover:border-white "
+            style={{ backgroundColor: '#1b1454' }}
             required
           >
             <option value="" disabled selected>
               Choose topic
             </option>
-            <option value="Marketing cooperation" className="hover:border-white bg-violet-950">Marketing cooperation</option>
-            <option value="Partnership cooperation">Partnership cooperation</option>
-            <option value="Product support">Product support</option>
-            <option value="CV">CV</option>
-            <option value="Other">Other</option>
+            <option value="Marketing cooperation" className="hover:border-white" style={{ backgroundColor: '#1b1454' }}>Marketing cooperation</option>
+            <option value="Partnership cooperation" style={{ backgroundColor: '#1b1454' }}>Partnership cooperation</option>
+            <option value="Product support" style={{ backgroundColor: '#1b1454' }}>Product support</option>
+            <option value="CV" style={{ backgroundColor: '#1b1454' }}>CV</option>
+            <option value="Other" style={{ backgroundColor: '#1b1454' }}>Other</option>
           </select>
 
           <label htmlFor="email" className="block text-white mb-2 text-sm">
@@ -57,7 +61,8 @@ const ContactUs = () => {
             type="email"
             id="email"
             name="email"
-            className="w-full text-sm p-2 mb-4 outline-none text-white border border-opacity-30 border-white hover:border-white rounded bg-violet-950"
+            className="w-full text-sm p-2 mb-4 outline-none text-white border border-opacity-30 border-white hover:border-white rounded "
+            style={{ backgroundColor: '#1b1454' }}
             placeholder="name@company.com"
             required
           />
@@ -69,7 +74,8 @@ const ContactUs = () => {
             type="text"
             id="telegram"
             name="telegram"
-            className="w-full text-sm p-2 mb-4 outline-none text-white border border-opacity-30 border-white hover:border-white rounded bg-violet-950"
+            className="w-full text-sm p-2 mb-4 outline-none text-white border border-opacity-30 border-white hover:border-white rounded "
+            style={{ backgroundColor: '#1b1454' }}
             placeholder="@john_smith"
             required
           />
@@ -81,14 +87,16 @@ const ContactUs = () => {
             id="request"
             name="request"
             rows="6"
-            className="w-full outline-none text-sm p-2 mb-4 border text-white border-opacity-30 max-h-24 min-h-24 border-white rounded hover:border-white bg-violet-950"
+            className="w-full outline-none text-sm p-2 mb-4 border text-white border-opacity-30 max-h-24 min-h-24 border-white rounded hover:border-white "
+            style={{ backgroundColor: '#1b1454' }}
             placeholder="Describe your request"
             required
           ></textarea>
 
           <button
             type="submit"
-            className="border-white border-2 border-opacity-30  bg-violet-950 mb-10 text-white px-4 py-2 text-sm rounded cursor-pointer  hover:border-white"
+            className="border-violet-400 border-2 border-opacity-30   mb-10 text-white px-4 py-2 text-sm rounded cursor-pointer  hover:border-white w-32"
+            style={{ backgroundColor: '#1b1454' }}
           >
             Submit
           </button>

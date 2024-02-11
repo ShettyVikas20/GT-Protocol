@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartoonizer</title>
+    <style>
+        html, body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #0D0C28, #5900b3);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            display: none;
+        }
+
+        .file-upload-label, .submit-button {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            background-color: #5900b3;
+            color: #fff;
+        }
+
+        .file-upload-label:hover {
+            background-color: #007BFF;
+        }
+
+        .submit-button {
+            margin-top: 10px;
+            background-color: #5900b3;
+        }
+
+        .submit-button:hover {
+            background-color: #007BFF;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+
+        .file-selected-message {
+            margin-top: 10px;
+            color: #ffff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cartoonizer</h1>
+        <form method="post" enctype="multipart/form-data" onsubmit="showFileSelectedMessage()">
+            <label for="file" class="file-upload-label">Choose File</label>
+            <input id="file" class='fileupload' type="file" name="file" accept=".jpg, .jpeg, .png" required onchange="showFileSelectedMessage()">
+            <div id="file-selected-message" class="file-selected-message">File selected: </div>
+            <button type="submit" class="submit-button">Upload and Cartoonize</button>
+        </form>
+        {% if result_image %}
+            <div class="result">
+                <img src="{{ result_image }}" alt="Cartoonized Image">
+            </div>
+        {% endif %}
+    </div>
+    <script>
+        function showFileSelectedMessage() {
+            const fileInput = document.getElementById('file');
+            const fileSelectedMessage = document.getElementById('file-selected-message');
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                fileSelectedMessage.innerHTML = `File selected: ${fileName}`;
+                fileSelectedMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
