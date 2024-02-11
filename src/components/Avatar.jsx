@@ -1,53 +1,66 @@
-// Avatar.jsx
-import React, { useState } from "react";
-import AvatarEditor from "react-avatar-editor";
+// frontend/src/Avatar.jsx
+import React, { useState } from 'react';
 
 const Avatar = () => {
-  const [image, setImage] = useState(null);
-  const [preview, setPreview] = useState(null);
+  const [fileSelectedMessage, setFileSelectedMessage] = useState('');
+  const [resultImage, setResultImage] = useState(null);
 
-  const onImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImage(file);
-      setPreview(URL.createObjectURL(file));
+  const showFileSelectedMessage = (e) => {
+    const fileInput = e.target;
+    if (fileInput.files.length > 0) {
+      const fileName = fileInput.files[0].name;
+      setFileSelectedMessage(`File selected: ${fileName}`);
     }
   };
 
-  const onSubmit = async () => {
-    if (image) {
-      const formData = new FormData();
-      formData.append("file", image);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      try {
-        const response = await fetch("http://localhost:5000/cartoonize", {
-          method: "POST",
-          body: formData,
-        });
+    const formData = new FormData(e.target);
+    try {
+      const response = await fetch('/upload', {
+        method: 'POST',
+        body: formData,
+      });
 
-        if (response.ok) {
-          const result = await response.json();
-          console.log(result); // Handle the result as needed
-        } else {
-          console.error("Error while sending the image");
-        }
-      } catch (error) {
-        console.error("Error:", error);
+      if (response.ok) {
+        const result = await response.json();
+        setResultImage(result.result_image);
       }
+    } catch (error) {
+      console.error('Error uploading image:', error);
     }
   };
 
   return (
-    <div>
-      <input type="file" onChange={onImageChange} accept=".jpg, .jpeg, .png" />
-      {preview && (
-        <>
-          <AvatarEditor image={preview} width={250} height={250} />
-          <button className='bg-black' onClick={onSubmit}>Upload and Cartoonize</button>
-          <a href={preview} download="avatar">
-            Download image
-          </a>
-        </>
+    <div className="container">
+      <h1>Cartoonizer</h1>
+      <form onSubmit={handleSubmit} encType="multipart/form-data" action="/upload">
+        <label htmlFor="file" className="file-upload-label">
+          Choose File
+        </label>
+        <input
+          id="file"
+          className="fileupload"
+          type="file"
+          name="file"
+          accept=".jpg, .jpeg, .png"
+          required
+          onChange={(e) => {
+            showFileSelectedMessage(e);
+          }}
+        />
+        <div id="file-selected-message" className="file-selected-message">
+          {fileSelectedMessage}
+        </div>
+        <button type="submit" className="submit-button">
+          Upload and Cartoonize
+        </button>
+      </form>
+      {resultImage && (
+        <div className="result">
+          <img src={resultImage} alt="Cartoonized Image" />
+        </div>
       )}
     </div>
   );

@@ -1,13 +1,12 @@
-from flask import Flask, render_template, request
+# backend/main.py
+from flask import Flask, render_template, request, jsonify
 import cv2
 import numpy as np
 from PIL import Image
 from io import BytesIO
 from base64 import b64encode
-from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS
 
 def cartoonize_image(img, k_size=5, sketch_mode=False):
     # Convert image to grayscale
@@ -49,5 +48,30 @@ def index():
     
     return render_template('index.html', result_image=None)
 
+# Update the route for file upload
+@app.route('/upload', methods=['POST'])
+def upload():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+
+    file = request.files['file']
+
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+
+    try:
+        image = Image.open(BytesIO(file.read()))
+        img_np = np.array(image)
+        img_bgr = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)
+        cartoon_image = cartoonize_image(img_bgr, k_size=5, sketch_mode=False)
+        _, img_encoded = cv2.imencode('.png', cartoon_image)
+        img_str = img_encoded.tostring()
+        result_image = 'data:image/png;base64,' + str(b64encode(img_str), 'utf-8')
+
+        return jsonify({'result_image': result_image}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5173)
