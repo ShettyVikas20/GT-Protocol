@@ -22,7 +22,7 @@ function Home() {
           <div className="z-20 flex flex-col justify-end lg:flex-row lg:justify-between lg:items-end pb-5 relative">
             <h1 className="w-[35%] flex-none my-0 font-normal text-4xl lg:text-6xl block text-white font-['Instrument Sans']">
               <span class="block">Blockchain</span>
-              <span class="whitespace-nowrap break-normal bg-[url('https://assets-global.website-files.com/6571cd8955f9e7f772615980/6571cd8955f9e7f772615a59_hero-title-arrow.svg')] bg-['0 40%'] bg-no-repeat bg-[length:2.25rem] pl-[3.125rem]">
+              <span class="whitespace-nowrap break-normal bg-[url('https://assets-global.website-files.com/6571cd8955f9e7f772615980/6571cd8955f9e7f772615a59_hero-title-arrow.svg')] bg-['0 40%'] bg-no-repeat bg-[length:3.25rem] pl-[3.125rem]">
                 AI Execution
               </span>
               <span class="block">Protocol</span>

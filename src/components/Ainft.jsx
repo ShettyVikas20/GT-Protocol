@@ -16,7 +16,7 @@ const Ainft = () => {
         <img src={ImgBg} alt="gone" />
       </div>
       <div className="ai-shopping">
-      <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
+      <h1 className="w-[15%] flex-none my-0 font-normal text-4xl lg:text-6xl block text-white font-['Instrument Sans']">
           AI NFT
           <br />
          Management

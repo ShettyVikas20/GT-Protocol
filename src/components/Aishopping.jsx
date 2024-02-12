@@ -16,13 +16,14 @@ const Aishopping = () => {
         <img src={ImgBg} alt="gone" />
       </div>
       <div className="ai-shopping">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-8">
+      <h1 className="w-[15%] flex-none my-0 font-normal text-4xl lg:text-6xl block text-white font-['Instrument Sans']">
           Ai Shopping
           <br />
           Assistance{" "}
         </h1>
-
+     
         <button className="button3">Play Video</button>
+
         <img src={Aishop} alt="yo" />
         <p>
           Get AI assistance to purchase goods online as easily as talking to a
@@ -40,6 +41,7 @@ const Aishopping = () => {
           journey
         </p>
       </div>
+      
       <div className="image-button">
         <img
           src="https://assets-global.website-files.com/6571cd8955f9e7f772615980/6571cd8955f9e7f772615a43_slider-arrow-top.svg"
@@ -49,7 +51,7 @@ const Aishopping = () => {
           src="https://assets-global.website-files.com/6571cd8955f9e7f772615980/6571cd8955f9e7f772615a42_slider-arrow-bottom.svg"
           alt="yo"
         />
-      </div>
+      </div> 
     </>
   );
 };
