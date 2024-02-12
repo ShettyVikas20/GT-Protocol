@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 //import { useNavigate } from "react-router-dom";
 import SubMenu from "./SubMenu"
+import { useNavigate } from 'react-router';
 
-function Navbar() {
+function Navbar () {
+  const navigate= useNavigate();
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   // Calculate the top position for the image
   const navbarHeight = 74.8; // Height of the navbar in pixels
@@ -194,8 +196,7 @@ function Navbar() {
           Team
         </a>
         <a
-          href="/"
-          aria-current="page"
+          onClick={() => navigate("/contatus")}
           className="bracket-hover hidden lg:flex"
         >
           Contact Us
@@ -345,7 +346,7 @@ function Navbar() {
           <a href="/" aria-current="page" className="bracket-hover1">
             Team
           </a>
-          <a href="/contatus" aria-current="page" className="bracket-hover1">
+          <a  onClick={() => navigate("/contatus")} className="bracket-hover1">
             Contact Us
           </a>
           <a

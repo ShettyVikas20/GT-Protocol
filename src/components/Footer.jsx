@@ -3,7 +3,6 @@ import { FaInstagram, FaTelegram, FaTwitter, FaYoutube, FaLinkedin } from 'react
 import { useNavigate } from 'react-router';
 
 const Footer = () => {
-
   const navigate= useNavigate()
   return (
     <div className="footer-container bg-gray-900 h-96 relative">
