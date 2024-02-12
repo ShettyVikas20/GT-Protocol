@@ -225,7 +225,7 @@ function Home() {
           src="https://assets-global.website-files.com/6571cd8955f9e7f772615980/6571cd8955f9e7f772615a65_GT_features_BG.webp"
           alt="AI Icon"
         />
-        <div className="mobile ">
+        <div className="mobile mt-20">
           <img src={ImgBg} alt="gone" />
         </div>
         <div>

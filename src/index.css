@@ -17,13 +17,13 @@
   }
 
   .absolute1 img {
-    top: 320vh; /* Adjust the padding value as needed */
+    top: 335vh; /* Adjust the padding value as needed */
     position: absolute;
     right: 0px;
     width: 900px;
   }
   .absolute2 img{
-    top: 235vh; /* Adjust the padding value as needed */
+    top: 250vh; /* Adjust the padding value as needed */
     position: absolute;
     right: 0px;
     width: 900px;
@@ -36,7 +36,7 @@
     position:absolute ;
     right: 20vh;
   
-    margin-top: 18vh;
+    margin-top: 19vh;
     
   }
   .mobile_for{
@@ -44,7 +44,7 @@
     width:35vw;
     position:absolute ;
     left: 56vh;
-    margin-top: 30vh;
+    margin-top: 27vh;
     
   }
 
@@ -55,7 +55,7 @@
 
  .top-96vh
  {
-  top:225vh;
+  top:239vh;
   border-top: 0.2px solid gray;
  }
  
@@ -64,7 +64,7 @@
    display: flex;
    left:20vh;
    gap: 20px;
-   top:190vh;
+   top:210vh;
   
  }
  
@@ -72,7 +72,7 @@
   
    position:absolute;
    width:100%;
-   top:80vh;
+   top:100vh;
    left: 0;
    /* background-color: aqua; */
   
