@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Sdk from "./Sdk";
 import Web3 from "./Web3";
 import Tablet from "./Tablet";
+import Navbar from "./Navbar";
 
 import { useNavigate } from "react-router";
 
@@ -31,6 +32,7 @@ function Home() {
 
   return (
     <section >
+      <Navbar />
       <div className="w-full h-screen block relative overflow-hidden">
         <div className="w-full h-screen absolute top-0 left-0">
           <video
@@ -253,7 +255,7 @@ function Home() {
    <Tablet />
  <Web3 />
  <Sdk />
- <ContactUs />
+ {/* <ContactUs /> */}
  <Footer />
     
       {/* <Nayapage /> */}

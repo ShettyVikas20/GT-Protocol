@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const ContactUs = () => {
   // Set the background color of the whole web page to violet-900
@@ -8,6 +9,8 @@ const ContactUs = () => {
   // document.body.style.background = "linear-gradient(to bottom, #030b1f, ##1d1a4a)";
 
   return (
+    <>
+    <Navbar />
     <div className="grid grid-cols-1 pt-20 pb-10 md:grid-cols-2 overlay bg-opacity-25 top-4 my-20 bg-black outline-black  rounded-lg mx-24">
       <div className="-mt-3 font-arial  px-12 py-4 text-left ">
         <h2 className="text-white text-5xl mb-6 pl-8">Contact Us</h2>
@@ -130,6 +133,7 @@ const ContactUs = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
