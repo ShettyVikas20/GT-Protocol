@@ -15,7 +15,7 @@ const Avatar = () => {
       // Display confirmation message for 3 seconds
       setTimeout(() => {
         setFileSelectedMessage('');
-      }, 3000);
+      }, 10000);
     }
   };
 
@@ -43,7 +43,8 @@ const Avatar = () => {
   document.body.style.backgroundAttachment = "fixed";
 
   return (
-    <div className="container mx-auto my-10 bg-black text-white h-screen overlay bg-opacity-70 backdrop-blur-md pt-10 rounded-lg border-2">
+
+    <div  className=" bg-black text-white h-screen overlay my-10 mx-10 bg-opacity-70 backdrop-blur-md  pt-10 rounded-lg border-2">
       <h1 className="text-4xl font-bold mb-4 text-center">Cartoonizer</h1>
       <form onSubmit={handleSubmit} encType="multipart/form-data" action="/upload" className="flex flex-col items-center">
         <label htmlFor="file" className="file-upload-label p-2 mb-2 border border-white rounded-lg items-center cursor-pointer hover:border-indigo-500 hover:border-2">

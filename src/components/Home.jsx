@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import VideoBG from "../assets/videobg.mp4";
 import Marques from "./Marques";
 import Navbars from "./Navbars";
-import "./Avatar";
+import Ainft from "./Ainft";
+import Aishopping from "./Aishopping";
+import ContactUs from "./ContactUs";
+import Footer from "./Footer";
+import Sdk from "./Sdk";
+import Web3 from "./Web3";
+import Tablet from "./Tablet";
+
+import { useNavigate } from "react-router";
+
+import ImgBg from "../assets/mobil2.jpg";
+
+import { Nayapage } from "./Nayapage";
 
 function Home() {
+  const [showComponent1, setShowComponent1] = useState(true);
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        setShowComponent1((prev) => !prev); // Toggle between true and false
+      }, 3000); // Switch every 5 seconds
+  
+      return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+    }, [showComponent1]);
+
+  const navigate = useNavigate();
+
+
   return (
-    <>
+    <section >
       <div className="w-full h-screen block relative overflow-hidden">
         <div className="w-full h-screen absolute top-0 left-0">
           <video
@@ -65,7 +89,7 @@ function Home() {
                   </p>
                 </a>
                 <a
-                  href="/avatar"
+                  onClick={() => navigate("/avatar")}
                   className="border-2 border-t-0 border-l-0 rounded-lg border-gray-400 relative w-[137px]"
                 >
                   <div className="text-gray-400 absolute z-0">
@@ -192,8 +216,48 @@ function Home() {
           <Navbars />
         </div>
       </div>
-      <div className="h-20"></div>
-    </>
+      {/* <div className="h-20"></div> */}
+
+      <div className="flex">
+        <img
+          src="https://assets-global.website-files.com/6571cd8955f9e7f772615980/6571cd8955f9e7f772615a65_GT_features_BG.webp"
+          alt="AI Icon"
+        />
+        <div className="mobile ">
+          <img src={ImgBg} alt="gone" />
+        </div>
+        <div>
+          {showComponent1 ? (
+            <div className="animate-ease-in">
+           <Aishopping />
+            </div>
+          ) : (
+            <div className="animate-ease-in">
+             
+              <Ainft />
+            </div>
+          )}
+        </div>
+      
+     
+     <div className="flex space-x-4 w-full absolute top-96vh">
+       <div className="text-slate-100 font-extralight text-sm pt-6 whitespace-nowrap">
+         <span className="w-32 pl-3">KYC&AUDITED BY:</span>
+       </div>
+       <div className="pt-4">
+         <Marques />
+       </div>
+     </div>
+   
+   </div>
+   <Tablet />
+ <Web3 />
+ <Sdk />
+ <ContactUs />
+ <Footer />
+    
+      {/* <Nayapage /> */}
+    </section>
   );
 }
 export default Home;

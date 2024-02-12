@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaInstagram, FaTelegram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa'; // Import icons from react-icons library
+import { useNavigate } from 'react-router';
 
 const Footer = () => {
+
+  const navigate= useNavigate()
   return (
     <div className="footer-container bg-gray-900 h-96 relative">
       <div className='footer-content'>
@@ -36,7 +39,7 @@ const Footer = () => {
         <div className="footer-list2 absolute top-20 right-20 h-72 w-80">
           <h1 className="text-white text-2xl mb-6">Contact</h1>
           <ul>
-            <li className="text-white text-lg"><a href=''className="contact-link">Contact Us</a></li>
+            <li className="text-white text-lg"><a  onClick={() => navigate("/contatus")} className="contact-link">Contact Us</a></li>
             <li className="text-white text-lg"><a href=''className="contact-link">Track Record</a></li>
             <li className="text-white text-lg"><a href=''className="contact-link">Brand Kit</a></li>
           </ul>
