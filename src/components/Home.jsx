@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import VideoBG from "../assets/videobg.mp4";
+import Test from "../assets/test.mp4"
 import Marques from "./Marques";
 import Navbars from "./Navbars";
 import Ainft from "./Ainft";
@@ -31,12 +32,12 @@ function Home() {
 
 
   return (
-    <section >
+    <section className="overflow-hidden" >
       <Navbar />
       <div className="w-full h-screen block relative overflow-hidden">
         <div className="w-full h-screen absolute top-0 left-0">
           <video
-            src={VideoBG}
+            src={Test}
             className="w-full h-screen object-cover -z-50 bg-center bg-cover m-auto absolute"
             autoPlay
             loop
