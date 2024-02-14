@@ -37,7 +37,7 @@ function Home() {
       <div className="w-full h-screen block relative overflow-hidden">
         <div className="w-full h-screen absolute top-0 left-0">
           <video
-            src={Test}
+            src={VideoBG}
             className="w-full h-screen object-cover -z-50 bg-center bg-cover m-auto absolute"
             autoPlay
             loop
